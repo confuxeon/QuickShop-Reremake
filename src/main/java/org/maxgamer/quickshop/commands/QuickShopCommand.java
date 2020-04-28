@@ -20,7 +20,6 @@ package org.maxgamer.quickshop.commands;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.Subcommand;
-import io.github.portlek.configs.annotations.Value;
 import org.jetbrains.annotations.NotNull;
 import org.maxgamer.quickshop.QuickShop;
 import org.maxgamer.quickshop.QuickShopAPI;

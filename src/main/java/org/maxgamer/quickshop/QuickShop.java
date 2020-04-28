@@ -1,9 +1,7 @@
 package org.maxgamer.quickshop;
 
 import co.aikar.commands.BukkitCommandManager;
-import co.aikar.commands.ConditionFailedException;
 import java.util.Optional;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import org.maxgamer.quickshop.commands.QuickShopCommand;
