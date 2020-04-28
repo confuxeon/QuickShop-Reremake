@@ -10,21 +10,23 @@ import io.github.portlek.configs.util.FileType;
 import io.github.portlek.configs.util.MapEntry;
 import org.jetbrains.annotations.NotNull;
 
-@LinkedConfig(configs = {
-    @Config(
-        name = "tr-TR",
-        type = FileType.JSON,
-        location = "%basedir%/QuickShop-Era",
-        copyDefault = true,
-        resourcePath = "lang"
+@LinkedConfig(files = {
+    @LinkedFile(
+        id = "tr-TR",
+        config = @Config(
+            name = "messages",
+            type = FileType.JSON,
+            location = "lang/tr-TR"
+        )
     ),
-    @Config(
-        name = "en-US",
-        type = FileType.JSON,
-        location = "%basedir%/QuickShop-Era",
-        copyDefault = true,
-        resourcePath = "lang"
-    )
+    @LinkedFile(
+        id = "tr",
+        config = @Config(
+            name = "messages",
+            type = FileType.JSON,
+            location = "lang/en-US"
+        )
+    ),
 })
 public final class LanguageFile extends BukkitLinkedManaged {
 
