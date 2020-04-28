@@ -24,6 +24,9 @@ public final class QuickShopAPI {
     public void reload(final boolean first) {
         this.configFile.load();
         this.languageFile.load();
+        if (first) {
+            // Register listeners...
+        }
     }
 
     public void disable() {
