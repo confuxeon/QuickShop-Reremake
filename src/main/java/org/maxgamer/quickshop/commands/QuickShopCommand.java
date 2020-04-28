@@ -19,7 +19,9 @@
 package org.maxgamer.quickshop.commands;
 
 import co.aikar.commands.BaseCommand;
+import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Subcommand;
+import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import org.maxgamer.quickshop.QuickShop;
 import org.maxgamer.quickshop.QuickShopAPI;
@@ -29,5 +31,10 @@ public final class QuickShopCommand extends BaseCommand {
 
     @NotNull
     private final QuickShopAPI api = QuickShop.getAPI();
+
+    @Default
+    public void defaultCommand(final CommandSender sender) {
+
+    }
 
 }
