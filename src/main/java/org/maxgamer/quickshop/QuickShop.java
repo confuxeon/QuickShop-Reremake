@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.commands.QuickShopCommand;
 
 public final class QuickShop extends JavaPlugin {
 
@@ -75,7 +76,7 @@ public final class QuickShop extends JavaPlugin {
                     .build("%player_name%", () -> name));
             }
         });
-        manager.registerCommand(new QuickShopCommand(api));
+        manager.registerCommand(new QuickShopCommand());
     }
 
 }
