@@ -18,7 +18,7 @@ public final class QuickShopAPI {
     public QuickShopAPI(@NotNull final QuickShop plugin) {
         this.plugin = plugin;
         this.configFile = new ConfigFile();
-        languageFile = new LanguageFile(configFile);
+        this.languageFile = new LanguageFile(this.configFile);
     }
 
     public void reload(final boolean first) {

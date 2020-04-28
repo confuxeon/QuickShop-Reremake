@@ -1,16 +1,11 @@
 package org.maxgamer.quickshop.files;
 
 import io.github.portlek.configs.BukkitLinkedManaged;
-import io.github.portlek.configs.BukkitSection;
 import io.github.portlek.configs.annotations.Config;
-import io.github.portlek.configs.annotations.Instance;
 import io.github.portlek.configs.annotations.LinkedConfig;
-import io.github.portlek.configs.annotations.Section;
 import io.github.portlek.configs.util.FileType;
 import io.github.portlek.configs.util.MapEntry;
-import lombok.Value;
 import org.jetbrains.annotations.NotNull;
-import sun.text.normalizer.Replaceable;
 
 @LinkedConfig(files = {
     @LinkedFile(
