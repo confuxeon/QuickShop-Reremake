@@ -12,18 +12,18 @@ import org.jetbrains.annotations.NotNull;
 
 @LinkedConfig(configs = {
     @Config(
-        name = "tr",
+        name = "tr-TR",
         type = FileType.JSON,
         location = "%basedir%/QuickShop-Era",
         copyDefault = true,
-        resourcePath = "lang/tr-TR"
+        resourcePath = "lang"
     ),
     @Config(
-        name = "en",
+        name = "en-US",
         type = FileType.JSON,
         location = "%basedir%/QuickShop-Era",
         copyDefault = true,
-        resourcePath = "lang/en-US"
+        resourcePath = "lang"
     )
 })
 public final class LanguageFile extends BukkitLinkedManaged {

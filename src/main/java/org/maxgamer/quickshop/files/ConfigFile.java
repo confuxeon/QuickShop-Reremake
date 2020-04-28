@@ -32,7 +32,7 @@ public final class ConfigFile extends BukkitManaged {
     public String plugin_language = "en-US";
 
     @Value
-    public String plugin_prefix = "en-US";
+    public String plugin_prefix = "&6[&eQuickShop-Era&6]";
 
     @Override
     public void onCreate() {
