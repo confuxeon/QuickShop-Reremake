@@ -66,16 +66,6 @@ public final class QuickShop extends JavaPlugin {
         this.getServer().getScheduler().runTask(this, () ->
             this.getServer().getScheduler().runTaskAsynchronously(this, () ->
                 api.reload(true)));
-        manager.getCommandConditions().addCondition(String[].class, "player", (context, exec, value) -> {
-            if (value == null || value.length == 0) {
-                return;
-            }
-            final String name = value[context.getConfigValue("arg", 0)];
-            if (context.hasConfig("arg") && Bukkit.getPlayer(name) == null) {
-                throw new ConditionFailedException(api.languageFile.errors.player_not_found
-                    .build("%player_name%", () -> name));
-            }
-        });
         manager.registerCommand(new QuickShopCommand());
     }
 
