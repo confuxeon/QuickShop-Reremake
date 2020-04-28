@@ -13,11 +13,13 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
     <properties>
         <package>org.maxgamer.quickshop</package>
         <developer>Ghost-chu</developer>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <issueManagement>
         <url>https://github.com/${developer}/${name}/issues</url>
         <system>GitHub Issues</system>
