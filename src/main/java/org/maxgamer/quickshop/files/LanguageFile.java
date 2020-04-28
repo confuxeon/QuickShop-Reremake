@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
         )
     ),
     @LinkedFile(
-        id = "tr",
+        id = "en-US",
         config = @Config(
             name = "messages",
             type = FileType.JSON,
