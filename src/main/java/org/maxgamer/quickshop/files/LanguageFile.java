@@ -10,14 +10,14 @@ import io.github.portlek.configs.util.FileType;
         type = FileType.JSON,
         location = "%basedir%/QuickShop-Era",
         copyDefault = true,
-        resourcePath = ""
+        resourcePath = "messages"
     ),
     @Config(
         name = "en",
         type = FileType.JSON,
         location = "%basedir%/QuickShop-Era",
         copyDefault = true,
-        resourcePath = ""
+        resourcePath = "messages"
     )
 })
 public final class LanguageFile {
