@@ -61,18 +61,18 @@ public final class QuickShop extends JavaPlugin {
     @Override
     public void onEnable() {
         final BukkitCommandManager manager = new BukkitCommandManager(this);
-        final QuickShopAPI api = new QuickShopAPI(this);
-        this.setAPI(api);
+        final QuickShopAPI loader = new QuickShopAPI(this);
+        this.setAPI(loader);
         this.getServer().getScheduler().runTask(this, () ->
             this.getServer().getScheduler().runTaskAsynchronously(this, () ->
-                api.reload(true)));
+                loader.reload(true)));
         manager.getCommandConditions().addCondition(String[].class, "player", (context, exec, value) -> {
             if (value == null || value.length == 0) {
                 return;
             }
             final String name = value[context.getConfigValue("arg", 0)];
             if (context.hasConfig("arg") && Bukkit.getPlayer(name) == null) {
-                throw new ConditionFailedException(api.languageFile.getOrSet("unknown-player", "")
+                throw new ConditionFailedException(loader.languageFile.getOrSet("unknown-player", "")
                     .replace("%player_name%", name));
             }
         });
