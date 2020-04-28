@@ -87,7 +87,7 @@
         <dependency>
             <artifactId>annotations</artifactId>
             <groupId>org.jetbrains</groupId>
-            <version>18.0.0</version>
+            <version>19.0.0</version>
         </dependency>
         <dependency>
             <artifactId>lombok</artifactId>
