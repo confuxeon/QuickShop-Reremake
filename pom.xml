@@ -3,8 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.maxgamer</groupId>
-    <artifactId>QuickShop</artifactId>
+    <artifactId>QuickShop-Era</artifactId>
     <version>5.0</version>
+    <name>QuickShop-Era</name>
 
     <licenses>
         <license>
@@ -118,6 +119,12 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
 
     <repositories>
