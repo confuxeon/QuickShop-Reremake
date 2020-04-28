@@ -8,7 +8,9 @@ import io.github.portlek.configs.annotations.LinkedConfig;
 import io.github.portlek.configs.annotations.Section;
 import io.github.portlek.configs.util.FileType;
 import io.github.portlek.configs.util.MapEntry;
+import lombok.Value;
 import org.jetbrains.annotations.NotNull;
+import sun.text.normalizer.Replaceable;
 
 @LinkedConfig(files = {
     @LinkedFile(
@@ -29,9 +31,6 @@ import org.jetbrains.annotations.NotNull;
     ),
 })
 public final class LanguageFile extends BukkitLinkedManaged {
-
-    @Instance
-    public final LanguageFile.Errors errors = new LanguageFile.Errors();
 
     public LanguageFile(@NotNull final ConfigFile configFile) {
         super(configFile.plugin_language, MapEntry.from("config", configFile));
@@ -55,11 +54,6 @@ public final class LanguageFile extends BukkitLinkedManaged {
 
     @Override
     public void onLoad() {
-
-    }
-
-    @Section(path = "errors")
-    public final class Errors extends BukkitSection {
 
     }
 
