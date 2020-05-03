@@ -18,6 +18,6 @@
 
 package org.maxgamer.quickshop;
 
-public final class Core {
+public interface Addon {
 
 }
