@@ -4,7 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.maxgamer</groupId>
     <artifactId>QuickShop-Era</artifactId>
+    <packaging>pom</packaging>
     <version>5.0</version>
+    <modules>
+        <module>core</module>
+    </modules>
     <name>QuickShop-Era</name>
     <description>...</description>
 
