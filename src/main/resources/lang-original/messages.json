@@ -65,7 +65,7 @@
   "warn-to-paste": "&eCollecting data and uploading it to Pastebin, this may take a while. &c&lWarning:&c The data is kept public for one week! It may leak your server configuration and other sensitive information. Make sure you only send it to &ltrusted staff/developers.",
   "price-too-high": "&cThe shop price is too high! You cannot create one with a price higher than {0}.",
   "you-cant-create-shop-in-there": "&cYou don't have permission to create a shop at this location.",
-  "unknown-player": "&cTarget player doesn't exist, please check the username you typed.",
+  "unknown-player": "&cTarget, player doesn't exist, player doesn't exist, please check the username you typed.",
   "shop-staff-cleared": "&aSuccessfully removed all staff members from your shop.",
   "shop-staff-added": "&aSuccessfully added {0} as a staff member for your shop.",
   "shop-staff-deleted": "&aSuccessfully removed {0} as a staff member for your shop.",

@@ -72,8 +72,8 @@ public final class QuickShop extends JavaPlugin {
             }
             final String name = value[context.getConfigValue("arg", 0)];
             if (context.hasConfig("arg") && Bukkit.getPlayer(name) == null) {
-                throw new ConditionFailedException(loader.languageFile.getOrSet("unknown-player", "")
-                    .replace("%player_name%", name));
+                throw new ConditionFailedException(loader.languageFile.unknown_player
+                    .build("%player_name%", () -> name));
             }
         });
         manager.registerCommand(new QuickShopCommand());
