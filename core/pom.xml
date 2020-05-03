@@ -26,8 +26,8 @@
         <version>5.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>core</artifactId>
+    <name>qs-core</name>
+    <artifactId>qs-core</artifactId>
 
 
 </project>
