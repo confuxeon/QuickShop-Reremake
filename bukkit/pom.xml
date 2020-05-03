@@ -82,7 +82,7 @@
     <dependencies>
         <dependency>
             <groupId>org.maxgamer</groupId>
-            <artifactId>core</artifactId>
+            <artifactId>qs-core</artifactId>
             <version>5.0</version>
         </dependency>
         <dependency>
