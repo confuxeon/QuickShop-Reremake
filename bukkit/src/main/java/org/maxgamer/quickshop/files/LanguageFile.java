@@ -18,12 +18,12 @@
 
 package org.maxgamer.quickshop.files;
 
-import io.github.portlek.configs.util.ColorUtil;
 import io.github.portlek.configs.BukkitLinkedManaged;
 import io.github.portlek.configs.annotations.Config;
 import io.github.portlek.configs.annotations.LinkedConfig;
 import io.github.portlek.configs.annotations.LinkedFile;
 import io.github.portlek.configs.annotations.Value;
+import io.github.portlek.configs.util.ColorUtil;
 import io.github.portlek.configs.util.FileType;
 import io.github.portlek.configs.util.MapEntry;
 import io.github.portlek.configs.util.Replaceable;
