@@ -22,12 +22,11 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.type;
 
-import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.Type;
+import org.maxgamer.quickshop.api.live.LiveLocational;
 
-public interface Addon {
-
-    @NotNull String getAddonId();
+public interface Locational extends Type<LiveLocational> {
 
 }

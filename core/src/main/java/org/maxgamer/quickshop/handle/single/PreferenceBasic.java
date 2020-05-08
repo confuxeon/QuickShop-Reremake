@@ -22,12 +22,40 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.handle.single;
 
+import com.eclipsesource.json.JsonObject;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.live.Manager;
+import org.maxgamer.quickshop.api.single.Preference;
 
-public interface Addon {
+@RequiredArgsConstructor
+public final class PreferenceBasic implements Preference {
 
-    @NotNull String getAddonId();
+    @NotNull
+    private final Manager manager;
+
+    private boolean display;
+
+    private boolean enable;
+
+    private boolean unlimited;
+
+    private boolean dynamic;
+
+    @NotNull
+    @Override
+    public JsonObject serialize() {
+        final JsonObject jsonObject = new JsonObject();
+
+        jsonObject.add("manager", this.manager.serialize());
+        jsonObject.add("display", this.display);
+        jsonObject.add("enable", this.enable);
+        jsonObject.add("unlimited", this.unlimited);
+        jsonObject.add("dynamic", this.dynamic);
+
+        return jsonObject;
+    }
 
 }

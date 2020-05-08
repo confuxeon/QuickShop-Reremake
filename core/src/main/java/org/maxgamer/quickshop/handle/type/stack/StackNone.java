@@ -22,12 +22,23 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.handle.type.stack;
 
+import com.eclipsesource.json.JsonObject;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.handle.live.stack.LiveStackNone;
+import org.maxgamer.quickshop.api.live.LiveStack;
+import org.maxgamer.quickshop.api.type.Stack;
 
-public interface Addon {
+/**
+ * This class for null buy/sell stacks.
+ */
+public final class StackNone implements Stack {
 
-    @NotNull String getAddonId();
+    @NotNull
+    @Override
+    public LiveStack deserialize(@NotNull final JsonObject object) {
+        return new LiveStackNone();
+    }
 
 }

@@ -22,12 +22,34 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.type;
 
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.Type;
+import org.maxgamer.quickshop.api.live.LivePattern;
+import org.maxgamer.quickshop.api.single.Shop;
+import org.maxgamer.quickshop.api.single.ShopBase;
 
-public interface Addon {
+/**
+ * A {@link Shop} type, that includes live stacks, architecture in {@link ShopBase}.
+ */
+public interface Pattern extends Type<LivePattern> {
 
-    @NotNull String getAddonId();
+    /**
+     * Temporary method, we should delete that.
+     *
+     * @return the id
+     */
+    @NotNull String getId();
+
+    /**
+     * TODO
+     */
+    void preCreate();
+
+    /**
+     * TODO
+     */
+    void postCreate();
 
 }

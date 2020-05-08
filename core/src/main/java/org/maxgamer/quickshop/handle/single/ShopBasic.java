@@ -22,12 +22,31 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.handle.single;
 
+import com.eclipsesource.json.JsonObject;
+import java.util.UUID;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.single.Shop;
+import org.maxgamer.quickshop.api.single.ShopBase;
 
-public interface Addon {
+@RequiredArgsConstructor
+public final class ShopBasic implements Shop {
 
-    @NotNull String getAddonId();
+    @Getter
+    @NotNull
+    private final UUID uniqueId;
+
+    @Getter
+    @NotNull
+    private final ShopBase shopBase;
+
+    @NotNull
+    @Override
+    public JsonObject serialize() {
+        return this.shopBase.serialize();
+    }
 
 }

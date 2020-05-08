@@ -22,12 +22,29 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.single;
 
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.Live;
 
-public interface Addon {
+/**
+ * The biggest unit of the whole shops.
+ */
+public interface Shop extends Live {
 
-    @NotNull String getAddonId();
+    /**
+     * Gives the uuid
+     *
+     * @return the uuid of the shop
+     */
+    @NotNull UUID getUniqueId();
+
+    /**
+     * Gives the shop type
+     *
+     * @return the shop type of the shop.
+     */
+    @NotNull ShopBase getShopBase();
 
 }

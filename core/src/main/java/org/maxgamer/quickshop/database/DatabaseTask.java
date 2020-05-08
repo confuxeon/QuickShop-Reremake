@@ -22,12 +22,35 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.database;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
 
-public interface Addon {
+@ToString
+public final class DatabaseTask {
 
-    @NotNull String getAddonId();
+    private String statement;
+
+    private Task task;
+
+    public DatabaseTask(@NotNull final String sttmnt, @NotNull final Task tsk) {
+        this.statement = sttmnt;
+        this.task = tsk;
+    }
+
+    public void run() {
+        Database.getInstance().getConnection().ifPresent(connection -> {
+            try (final PreparedStatement sttmnt = connection.prepareStatement(this.statement)) {
+                this.task.edit(sttmnt);
+                sttmnt.execute();
+                this.task.onSuccess();
+            } catch (final SQLException e) {
+                this.task.onFailed(e);
+            }
+        });
+    }
 
 }

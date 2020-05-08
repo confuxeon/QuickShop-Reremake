@@ -22,12 +22,39 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.handle.single;
 
+import com.eclipsesource.json.JsonArray;
+import com.eclipsesource.json.JsonObject;
+import java.util.List;
+import java.util.UUID;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.single.Perm;
+import org.maxgamer.quickshop.api.single.Permissible;
 
-public interface Addon {
+@RequiredArgsConstructor
+public final class PermissibleBasic implements Permissible {
 
-    @NotNull String getAddonId();
+    @NotNull
+    private final UUID uuid;
+
+    @NotNull
+    private final List<Perm> perms;
+
+    @NotNull
+    @Override
+    public JsonObject serialize() {
+        final JsonObject jsonObject = new JsonObject();
+
+        jsonObject.add("uuid", this.uuid.toString());
+
+        final JsonArray permissions = new JsonArray();
+
+        this.perms.forEach(perm -> permissions.add(perm.serialize()));
+        jsonObject.add("permissions", permissions);
+
+        return jsonObject;
+    }
 
 }

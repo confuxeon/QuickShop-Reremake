@@ -22,12 +22,13 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.live;
 
-import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.Live;
 
-public interface Addon {
-
-    @NotNull String getAddonId();
+/**
+ * Manages permission hierarchy of the shop.
+ */
+public interface Manager extends Live {
 
 }

@@ -22,12 +22,29 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.single;
 
+import java.util.Collection;
+import java.util.Optional;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.type.Pattern;
+import org.maxgamer.quickshop.api.type.Stack;
 
-public interface Addon {
+/**
+ * Type registry for {@link Pattern}.
+ */
+public interface Registry {
 
-    @NotNull String getAddonId();
+    void registerPattern(@NotNull String id, @NotNull Pattern pattern);
+
+    @NotNull Optional<Pattern> getPatternById(@NotNull String id);
+
+    @NotNull Collection<Pattern> getPatterns();
+
+    void registerStack(@NotNull String id, @NotNull Stack stack);
+
+    @NotNull Optional<Stack> getStackById(@NotNull String id);
+
+    @NotNull Collection<Stack> getStacks();
 
 }

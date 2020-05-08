@@ -22,12 +22,16 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.type;
 
-import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.Type;
+import org.maxgamer.quickshop.api.live.LiveStack;
 
-public interface Addon {
-
-    @NotNull String getAddonId();
+/**
+ * The smallest building block for the buyWith/sell.
+ *
+ * @see LiveStack
+ */
+public interface Stack extends Type<LiveStack> {
 
 }

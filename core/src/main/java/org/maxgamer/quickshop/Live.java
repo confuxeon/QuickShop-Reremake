@@ -24,10 +24,19 @@
 
 package org.maxgamer.quickshop.api;
 
+import com.eclipsesource.json.JsonObject;
 import org.jetbrains.annotations.NotNull;
 
-public interface Addon {
+/**
+ * Live objects.
+ */
+public interface Live {
 
-    @NotNull String getAddonId();
+    /**
+     * Serializes the object
+     *
+     * @return the json of the object
+     */
+    @NotNull JsonObject serialize();
 
 }

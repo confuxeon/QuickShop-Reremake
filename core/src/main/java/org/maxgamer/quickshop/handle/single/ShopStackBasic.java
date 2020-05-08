@@ -22,12 +22,30 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.handle.single;
 
+import com.eclipsesource.json.JsonObject;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.live.LiveStack;
+import org.maxgamer.quickshop.api.single.ShopStack;
 
-public interface Addon {
+@RequiredArgsConstructor
+public final class ShopStackBasic implements ShopStack {
 
-    @NotNull String getAddonId();
+    @NotNull
+    private final LiveStack selfStack;
+
+    @NotNull
+    private final LiveStack buyStack;
+
+    @NotNull
+    private final LiveStack sellStack;
+
+    @NotNull
+    @Override
+    public JsonObject serialize() {
+        return new JsonObject();
+    }
 
 }

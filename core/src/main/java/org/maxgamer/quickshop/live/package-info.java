@@ -22,12 +22,7 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
-
-import org.jetbrains.annotations.NotNull;
-
-public interface Addon {
-
-    @NotNull String getAddonId();
-
-}
+/**
+ * TODO
+ */
+package org.maxgamer.quickshop.api.live;

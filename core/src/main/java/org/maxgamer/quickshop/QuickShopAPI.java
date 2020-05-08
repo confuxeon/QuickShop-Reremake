@@ -24,10 +24,36 @@
 
 package org.maxgamer.quickshop.api;
 
+import java.util.Optional;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.maxgamer.quickshop.api.handle.single.RegistryBasic;
+import org.maxgamer.quickshop.api.single.Registry;
 
-public interface Addon {
+public abstract class QuickShopAPI {
 
-    @NotNull String getAddonId();
+    @Nullable
+    private static QuickShopAPI instance = null;
+
+    private final Registry registry = new RegistryBasic();
+
+    @NotNull
+    public static QuickShopAPI getInstance() {
+        return Optional.ofNullable(QuickShopAPI.instance).orElseThrow(() ->
+            new IllegalStateException("You can't use QuickShop plugin before its start!")
+        );
+    }
+
+    public static void setInstance(@NotNull final QuickShopAPI ins) {
+        Optional.ofNullable(QuickShopAPI.instance).orElseThrow(() ->
+            new IllegalStateException("You can't instantiate the QuickShop twice!")
+        );
+        QuickShopAPI.instance = ins;
+    }
+
+    @NotNull
+    public final Registry getRegistry() {
+        return this.registry;
+    }
 
 }

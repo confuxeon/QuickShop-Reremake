@@ -22,12 +22,40 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.database;
 
+import java.sql.Connection;
+import java.util.Optional;
 import org.jetbrains.annotations.NotNull;
 
-public interface Addon {
+/**
+ * TODO
+ */
+public interface DatabaseCore {
 
-    @NotNull String getAddonId();
+    /**
+     * TODO
+     */
+    void close();
+
+    /**
+     * TODO
+     */
+    void flush();
+
+    /**
+     * TODO
+     *
+     * @param bs TODO
+     */
+    void queue(@NotNull BufferStatement bs);
+
+    /**
+     * TODO
+     *
+     * @return TODO
+     */
+    @NotNull
+    Optional<Connection> getConnection();
 
 }

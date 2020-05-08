@@ -22,12 +22,43 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.handle.single;
 
+import com.eclipsesource.json.JsonArray;
+import com.eclipsesource.json.JsonObject;
+import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.live.Manager;
+import org.maxgamer.quickshop.api.single.Permissible;
 
-public interface Addon {
+@RequiredArgsConstructor
+public final class ManagerBasic implements Manager {
 
-    @NotNull String getAddonId();
+    @NotNull
+    private final Permissible owner;
+
+    @NotNull
+    private final List<Permissible> coOwners;
+
+    public ManagerBasic(@NotNull Permissible owner, @NotNull final List<Permissible> coOwners) {
+        this.owner = owner;
+        this.coOwners = coOwners;
+    }
+
+    @NotNull
+    @Override
+    public JsonObject serialize() {
+        final JsonObject jsonObject = new JsonObject();
+
+        jsonObject.add("owner", this.owner.serialize());
+
+        final JsonArray parent = new JsonArray();
+
+        this.coOwners.forEach(permissible -> parent.add(permissible.serialize()));
+        jsonObject.add("co-owners", parent);
+
+        return jsonObject;
+    }
 
 }

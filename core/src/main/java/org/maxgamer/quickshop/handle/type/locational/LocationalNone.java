@@ -22,12 +22,20 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.handle.type.locational;
 
+import com.eclipsesource.json.JsonObject;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.handle.live.locational.LiveLocationalNone;
+import org.maxgamer.quickshop.api.live.LiveLocational;
+import org.maxgamer.quickshop.api.type.Locational;
 
-public interface Addon {
+public final class LocationalNone implements Locational {
 
-    @NotNull String getAddonId();
+    @NotNull
+    @Override
+    public LiveLocational deserialize(@NotNull JsonObject object) {
+        return new LiveLocationalNone();
+    }
 
 }

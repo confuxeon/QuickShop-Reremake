@@ -22,12 +22,21 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.database;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import org.jetbrains.annotations.NotNull;
 
-public interface Addon {
+interface Task {
 
-    @NotNull String getAddonId();
+    void edit(@NotNull PreparedStatement statement) throws SQLException;
+
+    default void onSuccess() {
+    }
+
+    default void onFailed(@NotNull final SQLException exception) {
+        exception.printStackTrace();
+    }
 
 }

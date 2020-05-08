@@ -22,12 +22,14 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.single;
 
-import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.Live;
+import org.maxgamer.quickshop.api.live.LiveStack;
 
-public interface Addon {
-
-    @NotNull String getAddonId();
+/**
+ * Collection of {@link LiveStack} that you can sell and buy actions.
+ */
+public interface ShopStack extends Live {
 
 }

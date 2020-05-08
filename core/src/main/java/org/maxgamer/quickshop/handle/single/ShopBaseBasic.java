@@ -22,12 +22,38 @@
  * SOFTWARE.
  */
 
-package org.maxgamer.quickshop.api;
+package org.maxgamer.quickshop.api.handle.single;
 
+import com.eclipsesource.json.JsonObject;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
+import org.maxgamer.quickshop.api.live.LiveLocational;
+import org.maxgamer.quickshop.api.live.LivePattern;
+import org.maxgamer.quickshop.api.single.Preference;
+import org.maxgamer.quickshop.api.single.ShopBase;
 
-public interface Addon {
+@RequiredArgsConstructor
+public final class ShopBaseBasic implements ShopBase {
 
-    @NotNull String getAddonId();
+    @NotNull
+    private final Preference preference;
+
+    @NotNull
+    private final LivePattern livePattern;
+
+    @NotNull
+    private final LiveLocational liveLocational;
+
+    @NotNull
+    @Override
+    public JsonObject serialize() {
+        final JsonObject jsonObject = new JsonObject();
+
+        jsonObject.add("preference", this.preference.serialize());
+        jsonObject.add("pattern", this.livePattern.serialize());
+        jsonObject.add("locational", this.liveLocational.serialize());
+
+        return jsonObject;
+    }
 
 }
